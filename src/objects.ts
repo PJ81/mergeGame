@@ -1,0 +1,408 @@
+import Animal from "./animals.js";
+
+export const ANIMALS: Array<Animal> = [{
+  image: 93,
+  next: 83,
+  nextGen: 1
+}, {
+  image: 83,
+  next: 80,
+  nextGen: 2
+}, {
+  image: 80,
+  next: 78,
+  nextGen: 3
+}, {
+  image: 78,
+  next: 79,
+  nextGen: 4
+}, {
+  image: 79,
+  next: 82,
+  nextGen: 5
+}, {
+  image: 82,
+  next: 81,
+  nextGen: 6
+}, {
+  image: 81,
+  next: 77,
+  nextGen: 7
+}, {
+  image: 77,
+  next: 75,
+  nextGen: 8
+}, {
+  image: 75,
+  next: 76,
+  nextGen: 9
+}, {
+  image: 76,
+  next: 92,
+  nextGen: 10
+}, {
+  image: 92,
+  next: 90,
+  nextGen: 11
+}, {
+  image: 90,
+  next: 89,
+  nextGen: 12
+}, {
+  image: 89,
+  next: 87,
+  nextGen: 13
+}, {
+  image: 87,
+  next: 84,
+  nextGen: 14
+}, {
+  image: 84,
+  next: 88,
+  nextGen: 15
+}, {
+  image: 88,
+  next: 86,
+  nextGen: 16
+}, {
+  image: 86,
+  next: 85,
+  nextGen: 17
+}, {
+  image: 85,
+  next: 91,
+  nextGen: 18
+}, {
+  image: 91,
+  next: 71,
+  nextGen: 19
+}, {
+  image: 71,
+  next: 72,
+  nextGen: 20
+}, {
+  image: 72,
+  next: 70,
+  nextGen: 21
+}, {
+  image: 70,
+  next: 69,
+  nextGen: 22
+}, {
+  image: 69,
+  next: 66,
+  nextGen: 23
+}, {
+  image: 66,
+  next: 68,
+  nextGen: 24
+}, {
+  image: 68,
+  next: 67,
+  nextGen: 25
+}, {
+  image: 67,
+  next: 73,
+  nextGen: 26
+}, {
+  image: 73,
+  next: 74,
+  nextGen: 27
+}, {
+  image: 74,
+  next: 51,
+  nextGen: 28
+}, {
+  image: 51,
+  next: 55,
+  nextGen: 29
+}, {
+  image: 55,
+  next: 56,
+  nextGen: 30
+}, {
+  image: 56,
+  next: 57,
+  nextGen: 31
+}, {
+  image: 57,
+  next: 53,
+  nextGen: 32
+}, {
+  image: 53,
+  next: 54,
+  nextGen: 33
+}, {
+  image: 54,
+  next: 59,
+  nextGen: 34
+}, {
+  image: 59,
+  next: 52,
+  nextGen: 35
+}, {
+  image: 52,
+  next: 61,
+  nextGen: 36
+}, {
+  image: 61,
+  next: 62,
+  nextGen: 37
+}, {
+  image: 62,
+  next: 63,
+  nextGen: 38
+}, {
+  image: 63,
+  next: 58,
+  nextGen: 39
+}, {
+  image: 58,
+  next: 65,
+  nextGen: 40
+}, {
+  image: 65,
+  next: 64,
+  nextGen: 41
+}, {
+  image: 64,
+  next: 60,
+  nextGen: 42
+}, {
+  image: 60,
+  next: 45,
+  nextGen: 43
+}, {
+  image: 45,
+  next: 38,
+  nextGen: 44
+}, {
+  image: 38,
+  next: 40,
+  nextGen: 45
+}, {
+  image: 40,
+  next: 39,
+  nextGen: 46
+}, {
+  image: 39,
+  next: 41,
+  nextGen: 47
+}, {
+  image: 41,
+  next: 42,
+  nextGen: 48
+}, {
+  image: 42,
+  next: 43,
+  nextGen: 49
+}, {
+  image: 43,
+  next: 8,
+  nextGen: 50
+}, {
+  image: 8,
+  next: 50,
+  nextGen: 51
+}, {
+  image: 50,
+  next: 44,
+  nextGen: 52
+}, {
+  image: 44,
+  next: 47,
+  nextGen: 53
+}, {
+  image: 47,
+  next: 46,
+  nextGen: 54
+}, {
+  image: 46,
+  next: 48,
+  nextGen: 55
+}, {
+  image: 48,
+  next: 49,
+  nextGen: 56
+}, {
+  image: 49,
+  next: 37,
+  nextGen: 57
+}, {
+  image: 37,
+  next: 36,
+  nextGen: 58
+}, {
+  image: 36,
+  next: 34,
+  nextGen: 59
+}, {
+  image: 34,
+  next: 33,
+  nextGen: 60
+}, {
+  image: 33,
+  next: 31,
+  nextGen: 61
+}, {
+  image: 31,
+  next: 32,
+  nextGen: 62
+}, {
+  image: 32,
+  next: 35,
+  nextGen: 63
+}, {
+  image: 35,
+  next: 30,
+  nextGen: 64
+}, {
+  image: 30,
+  next: 29,
+  nextGen: 65
+}, {
+  image: 29,
+  next: 28,
+  nextGen: 66
+}, {
+  image: 28,
+  next: 26,
+  nextGen: 67
+}, {
+  image: 26,
+  next: 24,
+  nextGen: 68
+}, {
+  image: 24,
+  next: 25,
+  nextGen: 69
+}, {
+  image: 25,
+  next: 20,
+  nextGen: 70
+}, {
+  image: 20,
+  next: 23,
+  nextGen: 71
+}, {
+  image: 23,
+  next: 22,
+  nextGen: 72
+}, {
+  image: 22,
+  next: 21,
+  nextGen: 73
+}, {
+  image: 21,
+  next: 19,
+  nextGen: 74
+}, {
+  image: 19,
+  next: 15,
+  nextGen: 75
+}, {
+  image: 15,
+  next: 16,
+  nextGen: 76
+}, {
+  image: 16,
+  next: 18,
+  nextGen: 77
+}, {
+  image: 18,
+  next: 17,
+  nextGen: 78
+}, {
+  image: 17,
+  next: 9,
+  nextGen: 79
+}, {
+  image: 9,
+  next: 10,
+  nextGen: 80
+}, {
+  image: 10,
+  next: 11,
+  nextGen: 81
+}, {
+  image: 11,
+  next: 12,
+  nextGen: 82
+}, {
+  image: 12,
+  next: 14,
+  nextGen: 83
+}, {
+  image: 14,
+  next: 13,
+  nextGen: 84
+}, {
+  image: 13,
+  next: 7,
+  nextGen: 85
+}, {
+  image: 7,
+  next: 6,
+  nextGen: 86
+}, {
+  image: 6,
+  next: 3,
+  nextGen: 87
+}, {
+  image: 3,
+  next: 4,
+  nextGen: 88
+}, {
+  image: 4,
+  next: 5,
+  nextGen: 89
+}, {
+  image: 5,
+  next: 0,
+  nextGen: 90
+}, {
+  image: 0,
+  next: 1,
+  nextGen: 91
+}, {
+  image: 1,
+  next: 2,
+  nextGen: 92
+}, {
+  image: 2,
+  next: 102,
+  nextGen: 93
+}, {
+  image: 102,
+  next: 97,
+  nextGen: 93
+}, {
+  image: 97,
+  next: 96,
+  nextGen: 94
+}, {
+  image: 96,
+  next: 98,
+  nextGen: 95
+}, {
+  image: 98,
+  next: 95,
+  nextGen: 96
+}, {
+  image: 95,
+  next: 99,
+  nextGen: 97
+}, {
+  image: 99,
+  next: 94,
+  nextGen: 98
+}, {
+  image: 94,
+  next: 100,
+  nextGen: 99
+}, {
+  image: 100,
+  next: -1,
+  nextGen: 100
+}];
+
