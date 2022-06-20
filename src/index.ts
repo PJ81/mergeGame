@@ -1,4 +1,4 @@
-import Animal from "./animals.js";
+import Animal from "./animal.js";
 import Anim from "./animation.js";
 import * as Const from "./const.js";
 import Game from "./lib/game.js";
@@ -21,7 +21,6 @@ class Merge extends Game {
   gridY: number;
   mouseX: number;
   mouseY: number;
-  current: Animal;
   currentIdx: number;
 
   constructor() {
@@ -58,14 +57,13 @@ class Merge extends Game {
       this.field[y] = null;
 
     this.currentIdx = 0;
-    this.current = ANIMALS.ANIMALS[this.currentIdx];
 
-    const a1 = new Anim(0), a2 = new Anim(0);
+    const a = ANIMALS.ANIMALS[this.currentIdx];
     this.timer = this.object = 0;
     this.timeExtra = 1;
-    this.field[0] = a1;
-    this.field[1] = a2;
-    this.spawnTime = 5;
+    this.field[0] = new Anim(new Animal(a.image, a.next, a.nextGen));
+    this.field[1] = new Anim(new Animal(a.image, a.next, a.nextGen));
+    this.spawnTime = 1;
     this.selection = null;
   }
 
@@ -114,7 +112,7 @@ class Merge extends Game {
       y = Math.floor((ev.clientY - this.canvas.offsetTop) / m);
     if (this.field[x + Const.FIELD_X * y] === null) {
       this.field[x + Const.FIELD_X * y] = this.selection;
-    } else if (this.field[x + Const.FIELD_X * y].object === this.selection.object) {
+    } else if (this.field[x + Const.FIELD_X * y].animal.image === this.selection.animal.image) {
       this.merge(x, y);
     } else {
       this.field[this.gridX + Const.FIELD_X * this.gridY] = this.field[x + Const.FIELD_X * y];
@@ -126,7 +124,8 @@ class Merge extends Game {
   spawn() {
     for (let s = 0; s < Const.MAX_OBJ; s++) {
       if (this.field[s] === null) {
-        this.field[s] = new Anim(this.object);
+        const a = ANIMALS.ANIMALS[this.currentIdx];
+        this.field[s] = new Anim(new Animal(a.image, a.next, a.nextGen));
         return;
       }
     }
@@ -135,8 +134,11 @@ class Merge extends Game {
   merge(x: number, y: number) {
     this.startParticles(x * Const.GRID_SIZE + Const.MARGIN * x + Const.HALF_SPRITE, y * Const.GRID_SIZE + Const.MARGIN * y + Const.HALF_SPRITE);
     this.field[x + Const.FIELD_X * y] = null;
-    this.field[x + Const.FIELD_X * y] = new Anim(++this.selection.object);
-    this.spawnTime += .01;
+    const a = ANIMALS.ANIMALS.filter(o => {
+      return o.image === this.selection.animal.next;
+    })[0];
+    this.field[x + Const.FIELD_X * y] = new Anim(new Animal(a.image, a.next, a.nextGen));
+    //this.spawnTime += .01;
   }
 
   drawSprite(spr: number, x: number, y: number, size: number) {
@@ -189,11 +191,11 @@ class Merge extends Game {
       o = this.field[p];
       if (!o) continue;
       x = p % Const.FIELD_X; y = Math.floor(p / Const.FIELD_X);
-      this.drawSprite(o.object, x * Const.GRID_SIZE + Const.MARGIN * x, y * Const.GRID_SIZE + Const.MARGIN * y, o.size);
+      this.drawSprite(o.animal.image, x * Const.GRID_SIZE + Const.MARGIN * x, y * Const.GRID_SIZE + Const.MARGIN * y, o.size);
     }
 
     if (this.selection) {
-      this.drawSprite(this.selection.object, this.mouseX, this.mouseY, Const.SPRITE_SIZE);
+      this.drawSprite(this.selection.animal.image, this.mouseX, this.mouseY, Const.SPRITE_SIZE);
     }
 
     this.particles.forEach(p => {

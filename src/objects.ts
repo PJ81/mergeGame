@@ -1,6 +1,4 @@
-import Animal from "./animals.js";
-
-export const ANIMALS: Array<Animal> = [{
+export const ANIMALS = [{
   image: 93,
   next: 83,
   nextGen: 1

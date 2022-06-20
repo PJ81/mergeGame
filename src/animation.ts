@@ -1,12 +1,14 @@
+import Animal from "./animal.js";
 import * as Const from "./const.js";
 
 export default class Anim {
   running: boolean;
   back: boolean;
-  object: number;
+  animal: Animal;
   size: number;
-  constructor(obj: number) {
-    this.object = obj;
+
+  constructor(animal: Animal) {
+    this.animal = animal;
     this.size = 0;
     this.running = true;
     this.back = false;
